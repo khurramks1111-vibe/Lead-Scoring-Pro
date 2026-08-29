@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Real ML Lead Scoring</title>
+    <style>
+        body { font-family: Arial; background-color: #f4f4f9; padding: 50px; text-align: center; }
+        .form-box { background: white; padding: 30px; border-radius: 10px; box-shadow: 0px 0px 10px #ccc; display: inline-block; text-align: left; }
+        input, select, button { padding: 10px; margin: 10px 0; width: 100%; border-radius: 5px; border: 1px solid #ccc; box-sizing: border-box; }
+        button { background-color: #28a745; color: white; border: none; cursor: pointer; font-size: 16px; margin-top: 20px;}
+        button:hover { background-color: #218838; }
+        h1, h2 { text-align: center; }
+    </style>
+</head>
+<body>
+
+    <h1>🚀 Real ML Lead Scoring System</h1>
+    
+    {% if success %}
+        <h2 style="color: green;">{{ success }}</h2>
+    {% endif %}
+    {% if error %}
+        <h2 style="color: red;">{{ error }}</h2>
+    {% endif %}
+
+    <div class="form-box">
+        <form action="/predict-lead" method="POST">
+            <label>Name:</label>
+            <input type="text" name="name" required>
+            
+            <label>Email:</label>
+            <input type="email" name="email" required>
+            
+            <label>Lead Origin:</label>
+            <select name="Lead Origin">
+                <option value="Landing Page Submission">Landing Page Submission</option>
+                <option value="API">API</option>
+                <option value="Lead Add Form">Lead Add Form</option>
+            </select>
+
+            <label>Lead Source:</label>
+            <select name="Lead Source">
+                <option value="Organic Search">Organic Search</option>
+                <option value="Direct Traffic">Direct Traffic</option>
+                <option value="Google">Google</option>
+                <option value="Olark Chat">Olark Chat</option>
+                <option value="Reference">Reference</option>
+            </select>
+
+            <label>Total Visits (Website par kitni baar aya):</label>
+            <input type="number" step="0.1" name="TotalVisits" value="0" required>
+
+            <label>Total Time Spent on Website (Seconds mein):</label>
+            <input type="number" step="1" name="Total Time Spent on Website" value="0" required>
+
+            <label>Page Views Per Visit:</label>
+            <input type="number" step="0.1" name="Page Views Per Visit" value="0" required>
+
+            <label>Current Occupation:</label>
+            <select name="What is your current occupation">
+                <option value="Unemployed">Unemployed</option>
+                <option value="Working Professional">Working Professional</option>
+                <option value="Student">Student</option>
+                <option value="Businessman">Businessman</option>
+            </select>
+            
+            <button type="submit">Predict Lead Score (ML) 🧠</button>
+        </form>
+    </div>
+
+</body>
+</html>
