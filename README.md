@@ -2,8 +2,6 @@ Lead Scoring Pro - ML Powered Lead Management System
 
 An intelligent lead scoring system that uses Machine Learning to predict lead conversion probability. Built with FastAPI, React, and scikit-learn.
 
-
-
 Python 3.11
 
 FasAPI 0.109.0
@@ -17,12 +15,7 @@ Supabase F2S4C4
 Render
 
 
-
-
-
-**Features**
-
-
+Features
 
 ML Prediction - RandomForest classifier predicts Hot/Cold leads
 
@@ -39,10 +32,7 @@ Auto-tracking - Source, visits, time spent auto-captured
 Professional UI - Clean, modern dark theme
 
 
-
-**Tech Stack**
-
-
+Tech Stack
 
 Layer	        Technology
 
@@ -60,9 +50,7 @@ Deployment	Render (Docker)
 
 
 
-📁 **Project Structure**
-
-
+📁*Project Structure
 
 lead-scoring-project/
 
@@ -74,7 +62,7 @@ lead-scoring-project/
 
 │ ├── scoring.py # ML prediction
 
-│ ├── train\_model.py # Model training script
+│ ├── train_model.py # Model training script
 
 │ ├── requirements.txt # Python dependencies
 
@@ -82,9 +70,9 @@ lead-scoring-project/
 
 │ ├── .dockerignore
 
-│ ├── real\_model.pkl # Trained ML model
+│ ├── real_model.pkl # Trained ML model
 
-│ ├── model\_columns.pkl # Model feature names
+│ ├── model_columns.pkl # Model feature names
 
 │ └── .env # Environment variables (gitignored)
 
@@ -128,27 +116,15 @@ lead-scoring-project/
 
 
 
-text
+## 🚀 Quick Start (Local Development)
 
+### Prerequisites
 
+- Python 3.11+
 
+- Node.js 18+
 
-
-\---
-
-
-
-\## 🚀 Quick Start (Local Development)
-
-
-
-\### Prerequisites
-
-\- Python 3.11+
-
-\- Node.js 18+
-
-\- Supabase account
+- Supabase account
 
 
 
@@ -162,9 +138,7 @@ cd Lead-Scoring-Pro/backend
 
 
 
-**2. Setup Environment**
-
-
+2. Setup Environment
 
 python -m venv venv
 
@@ -176,9 +150,7 @@ pip install -r requirements.txt
 
 
 
-**3. Setup Database**
-
-
+3. Setup Database
 
 Create project on Supabase
 
@@ -188,25 +160,16 @@ Update backend/.env with your database credentials
 
 
 
-**4. Train ML Model (First time only)**
-
-
+4. Train ML Model (First time only)
 
 python train\_model.py
 
 
-
-**5. Run Backend**
-
-
+5. Run Backend
 
 uvicorn main:app --reload
 
-
-
-**6. Run Frontend**
-
-
+6. Run Frontend
 
 cd ../frontend
 
@@ -214,11 +177,7 @@ npm install
 
 npm run dev
 
-
-
-**Access:**
-
-
+Access:
 
 Frontend: http://localhost:5173
 
@@ -227,103 +186,84 @@ Backend API: http://localhost:8000
 API Docs: http://localhost:8000/docs
 
 
-
-**🌐 Deployment (Render)**
-
-
+🌐 Deployment (Render)
 
 **Prerequisites**
-
-
 
 * GitHub account
 * Render account (free tier available)
 * Supabase database already set up
-* 
 
-**Backend (Docker)**
-
-
+Backend (Docker)
 
 1. Go to Render.com
 
-2\. New > Web Service > GitHub repo
+2. New > Web Service > GitHub repo
 
-3\. Settings:
+3. Settings:
 
-&#x20;  Root Directory: backend
+Root Directory: backend
 
-&#x20;  Runtime: Docker
+Runtime: Docker
 
-&#x20;  Build: pip install -r requirements.txt
+Build: pip install -r requirements.txt
 
-&#x20;  Start: uvicorn main:app --host 0.0.0.0 --port $PORT
-
-
-
-**4. Add environment variables:**
+Start: uvicorn main:app --host 0.0.0.0 --port $PORT
 
 
+4. Add environment variables:
 
-DB\_HOST=your-db-host.pooler.supabase.co
+DB_HOST=your-db-host.pooler.supabase.co
 
-DB\_PORT=6543
+DB_PORT=6543
 
-DB\_NAME=postgres
+DB_NAME=postgres
 
-DB\_USER=postgres.project\_id
+DB_USER=postgres.project\_id
 
-DB\_PASS=your-password
+DB_PASS=your-password
 
-SECRET\_KEY=your-secret-key
+SECRET_KEY=your-secret-key
 
 ALGORITHM=HS256
 
 
 
-**Frontend (Static Site)**
-
-
+Frontend (Static Site)
 
 1. Update API URL in frontend/src/Login.jsx and frontend/src/Dashboard.jsx:
 
-
-
 javascript
 
+const API_BASE = 'https://your-backend.onrender.com'
 
+2. New > Static Site > GitHub repo
 
-const API\_BASE = 'https://your-backend.onrender.com'
+3. Root Directory: frontend
 
+4. Build: npm install && npm run build
 
-
-2\. New > Static Site > GitHub repo
-
-3\. Root Directory: frontend
-
-4\. Build: npm install \&\& npm run build
-
-5\. Publish Directory: dist
+5. Publish Directory: dist
 
 
 
-**Customer Form (Static Site)**
+Customer Form (Static Site)
 
 
 
 1. New > Static Site > GitHub repo
 
-2\. Root Directory: form
+2. Root Directory: form
 
-3\. Build Command: (empty)
+3. Build Command: (empty)
 
-4\. Publish Directory: .
+4. Publish Directory: .
 
-5\. URL: https://your-form.onrender.com
+5. URL: https://your-form.onrender.com
 
 
 
-**📡 API Endpoints**
+📡 API Endpoints
 
 
 
@@ -346,7 +286,7 @@ DELETE	    /leads/{id}	        ✅	                Delete a lead
 
 
 
-📱 **Customer Form Integration**
+📱 Customer Form Integration
 
 
 
@@ -356,7 +296,7 @@ https://your-form.onrender.com
 
 
 
-🔐 **How It Works**
+🔐 How It Works
 
 
 
@@ -368,92 +308,73 @@ https://your-form.onrender.com
 
 └──────────┘     └──────────┘     └────┬───┘
 
-&#x20;                                        │
+                                        │
 
-&#x20;                                        ▼
+                                        ▼
 
-&#x20;                                 ┌──────────┐
+                                 ┌──────────┐
 
-&#x20;                                 │   ML Model   │
+                                 │   ML Model   │
 
-&#x20;                                 └──────────┘
+                                 └──────────┘
 
-&#x20;                                        │
+                                        │
 
-&#x20;                             ┌─────────────────────┐
+                             ┌─────────────────────┐
 
-&#x20;                             │    Hot Lead 🔥        │
+                             │    Hot Lead 🔥        │
 
-&#x20;                             │    OR               │
+                             │    OR               │
 
-&#x20;                             │    Cold Lead ❄️      │
+                             │    Cold Lead ❄️      │
 
-&#x20;                             └─────────────────────┘
+                             └─────────────────────┘
 
-&#x20;                                        │
+                                        │
 
-&#x20;                             ┌──────────┐
+                             ┌──────────┐
 
-&#x20;                             │ Dashboard │
+                             │ Dashboard │
 
-&#x20;                             │ + Pie Chart │
+                             │ + Pie Chart │
 
-&#x20;                             │ + Table    │
+                             │ + Table    │
 
-&#x20;                             └──────────┘
+                             └──────────┘
 
-🛠️ **Troubleshooting**
+🛠️ Troubleshooting
 
-
-
-**Database Connection Failed**
-
-
+Database Connection Failed
 
 * Check .env file exists with correct Supabase credentials
 * Use Transaction pooler connection string (port 6543)
 * Ensure SSL mode is enabled
 
-
-
-**CORS Error**
-
-
+CORS Error
 
 * Ensure allow\_origins includes frontend URL
 * Use direct CORS headers in endpoint
 
 
-
-**Model Version Warning**
-
-
+Model Version Warning
 
 * Retrain model with current scikit-learn version
 * Both versions must match
 
 
 
-**Port 8000 not working (Render)**
+Port 8000 not working (Render)
 
 
 
 * Use $PORT in Dockerfile CMD
 * Check Render environment variables
 
+📱 License
 
+This project is open source under the MIT License.
 
-📱 **License**
-
-
-
-**This project is open source under the MIT License.**
-
-
-
-📧 **Contact**
-
-
+📧 Contact
 
 GitHub: Lead-Scoring-Pro
 
